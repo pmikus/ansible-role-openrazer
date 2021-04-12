@@ -5,7 +5,7 @@ openrazer_package: "openrazer-meta"
 openrazer_package_state: present
 
 # Used only for Debian/Ubuntu. Switch "stable" to "nightly" if needed.
-openrazer_repo_url: "http://ppa.launchpad.net/openrazer/"
+openrazer_repo_url: "http://ppa.launchpad.net/openrazer"
 # Channel can be one of: "stable" or "daily".
 openrazer_apt_release_channel: "daily"
 
