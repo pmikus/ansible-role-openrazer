@@ -1,0 +1,27 @@
+---
+# file: requirements.yaml
+
+- name: Ensure old versions of Openrazer are not installed.
+  package:
+    name:
+      - {{ openrazer_package }}
+    state: absent
+  tags:
+    - openrazer-inst-dependencies
+
+- name: Ensure dependencies are installed.
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+    state: present
+  tags:
+    - openrazer-inst-dependencies
+
+- name: Add Openrazer repository.
+  apt_repository:
+    repo: "{{ openrazer_apt_repository }}"
+    state: present
+    update_cache: true
+  tags:
+    - openrazer-inst-dependencies

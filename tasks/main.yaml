@@ -1,0 +1,13 @@
+---
+# file: main.yaml
+
+- include_tasks: "{{ ansible_distribution|lower }}.yaml"
+  tags:
+    - openrazer-inst-dependencies
+
+- name: Install Openrazer.
+  package:
+    name: "{{ openrazer_package }}"
+    state: "{{ openrazer_package_state }}"
+  tags:
+    - openrazer-inst
