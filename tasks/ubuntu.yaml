@@ -1,5 +1,5 @@
 ---
-# file: requirements.yaml
+# file: ubuntu.yaml
 
 - name: Ensure old versions of Openrazer are not installed.
   package:

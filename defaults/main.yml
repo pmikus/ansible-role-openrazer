@@ -1,4 +1,6 @@
 ---
+# file: main.yaml
+
 openrazer_package: "openrazer-meta"
 openrazer_package_state: present
 
