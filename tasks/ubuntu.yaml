@@ -4,7 +4,7 @@
 - name: Ensure old versions of Openrazer are not installed.
   package:
     name:
-      - {{ openrazer_package }}
+      - "{{ openrazer_package }}"
     state: absent
   tags:
     - openrazer-inst-dependencies
