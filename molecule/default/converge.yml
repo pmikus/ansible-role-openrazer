@@ -4,4 +4,4 @@
   become: true
 
   roles:
-    - role: pmikus.openrazer
+    - role: pmikus.ansible-role-openrazer

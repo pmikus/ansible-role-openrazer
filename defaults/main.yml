@@ -1,13 +1,11 @@
 ---
-# file: main.yaml
+# file: default/main.yaml
 
 openrazer_package: "openrazer-meta"
-openrazer_package_state: present
+openrazer_package_state: "present"
 
-# Used only for Debian/Ubuntu. Switch "stable" to "nightly" if needed.
-openrazer_repo_url: "http://ppa.launchpad.net/openrazer"
+# Used only for Debian/Ubuntu.
 # Channel can be one of: "stable" or "daily".
 openrazer_apt_release_channel: "daily"
-
-openrazer_apt_repository: "deb {{ openrazer_repo_url }}/{{ openrazer_apt_release_channel }}/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release }} main"
-openrazer_apt_ignore_key_error: true
+openrazer_apt_url: "ppa:openrazer/{{ openrazer_apt_release_channel }}"
+openrazer_apt_state: "present"

@@ -1,5 +1,5 @@
 ---
-# file: ubuntu.yaml
+# file: tasks/ubuntu.yaml
 
 - name: Ensure old versions of Openrazer are not installed.
   package:
@@ -14,14 +14,15 @@
     name:
       - apt-transport-https
       - ca-certificates
+      - python3-apt
     state: present
   tags:
     - openrazer-inst-dependencies
 
 - name: Add Openrazer repository.
   apt_repository:
-    repo: "{{ openrazer_apt_repository }}"
-    state: present
+    repo: "{{ openrazer_apt_url }}"
+    state: "{{ openrazer_apt_state }}"
     update_cache: true
   tags:
     - openrazer-inst-dependencies
