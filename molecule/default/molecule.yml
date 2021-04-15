@@ -3,14 +3,17 @@ dependency:
   name: galaxy
 driver:
   name: docker
+lint: |
+  yamllint .
+  ansible-lint
+  flake8
 platforms:
-  - name: instance
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu1804}-ansible:latest"
-    command: ${MOLECULE_DOCKER_COMMAND:-""}
+  - name: ${DISTRO:-ubuntu-18.04}
+    image: "pmikus/docker-${MOLECULE_DISTRO:-ubuntu-18.04}-ansible:latest"
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    pre_build_image: true
+    pre_build_image: true  
 provisioner:
   name: ansible
   playbooks:
