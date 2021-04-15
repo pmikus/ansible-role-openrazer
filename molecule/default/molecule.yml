@@ -6,7 +6,6 @@ driver:
 lint: |
   yamllint .
   ansible-lint
-  flake8
 platforms:
   - name: ${DISTRO:-ubuntu-18.04}
     image: "pmikus/docker-${MOLECULE_DISTRO:-ubuntu-18.04}-ansible:latest"
