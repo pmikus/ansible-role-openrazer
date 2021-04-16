@@ -1,19 +1,16 @@
 ---
 # file: tasks/ubuntu.yaml
 
-- name: Ensure dependencies are installed.
+- name: Install Dependencies.
   apt:
-    name:
-      - "apt-transport-https"
-      - "ca-certificates"
-      - "python3-apt"
+    name: "{{ packages | flatten(levels=1) }}"
     state: "present"
     cache_valid_time: 3600
-    install_recommends: False
+    install_recommends: false
   tags:
     - openrazer-inst-dependencies
 
-- name: Add Openrazer repository.
+- name: Add Openrazer Repository.
   apt_repository:
     repo: "{{ openrazer_apt_url }}"
     state: "{{ openrazer_apt_state }}"
