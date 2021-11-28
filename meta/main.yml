@@ -16,6 +16,7 @@ galaxy_info:
         - bionic
         - focal
         - groovy
+        - impish
   galaxy_tags:
     - openrazer
     - razer
