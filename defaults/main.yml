@@ -28,6 +28,10 @@ packages_by_distro:
       - "apt-transport-https"
       - "ca-certificates"
       - "python3-apt"
+    jammy:
+      - "apt-transport-https"
+      - "ca-certificates"
+      - "python3-apt"
 
 packages_by_arch:
   x86_64:

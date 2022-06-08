@@ -6,7 +6,7 @@
     - openrazer-inst-dependencies
 
 - name: Install Openrazer.
-  package:
+  ansible.builtin.package:
     name: "{{ openrazer_package }}"
     state: "{{ openrazer_package_state }}"
   tags:
